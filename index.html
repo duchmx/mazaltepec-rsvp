@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Confirma tu asistencia · Jardines de Mazaltepec</title>
+<meta name="description" content="RSVP — Evento de asesores, lanzamiento de preventa Etapa 2, Jardines de Mazaltepec." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1B2620;
+    --jungle: #1B3A2B;
+    --jungle-deep: #12261C;
+    --sand: #F8F3E6;
+    --sand-warm: #F1E8D4;
+    --sage: #C7D0BC;
+    --sage-line: rgba(27, 58, 43, 0.14);
+    --ochre: #B5772E;
+    --ochre-deep: #96601F;
+    --white: #FFFDF9;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--sand);
+    color: var(--ink);
+    font-family: 'Public Sans', -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal {
+      animation: rise 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+    .reveal-2 { animation-delay: 0.08s; }
+    .reveal-3 { animation-delay: 0.16s; }
+    .reveal-4 { animation-delay: 0.24s; }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  }
+
+  .plot-grid {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  .plot-grid svg { width: 100%; height: 100%; display: block; }
+
+  header.hero {
+    position: relative;
+    background: var(--jungle);
+    color: var(--white);
+    padding: 56px 24px 64px;
+    overflow: hidden;
+  }
+
+  .eyebrow {
+    position: relative;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--sage);
+    font-weight: 600;
+    margin: 0 0 18px;
+  }
+
+  h1 {
+    position: relative;
+    font-family: 'Fraunces', serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-size: clamp(34px, 8vw, 52px);
+    line-height: 1.06;
+    margin: 0 0 16px;
+    max-width: 480px;
+    letter-spacing: -0.01em;
+  }
+
+  .hero-sub {
+    position: relative;
+    font-size: 16px;
+    line-height: 1.55;
+    max-width: 420px;
+    color: rgba(255, 253, 249, 0.82);
+    margin: 0 0 28px;
+  }
+
+  .detail-card {
+    position: relative;
+    background: rgba(255, 253, 249, 0.08);
+    border: 1px solid rgba(255, 253, 249, 0.18);
+    border-radius: 14px;
+    padding: 18px 20px;
+    max-width: 420px;
+    backdrop-filter: blur(2px);
+  }
+
+  .detail-row {
+    display: flex;
+    gap: 12px;
+    padding: 8px 0;
+    font-size: 14.5px;
+    line-height: 1.4;
+  }
+  .detail-row + .detail-row {
+    border-top: 1px solid rgba(255, 253, 249, 0.14);
+  }
+  .detail-label {
+    color: var(--sage);
+    font-weight: 600;
+    min-width: 74px;
+    flex-shrink: 0;
+  }
+  .detail-value { color: var(--white); }
+  .detail-pending {
+    color: #E7C98C;
+    font-style: italic;
+  }
+
+  main {
+    max-width: 520px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .highlights {
+    padding: 40px 0 8px;
+  }
+  .highlights h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 21px;
+    margin: 0 0 18px;
+    color: var(--jungle-deep);
+  }
+  .highlight-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin: 0 0 8px;
+    padding: 0;
+    list-style: none;
+  }
+  .highlight-list li {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #33402F;
+  }
+  .highlight-mark {
+    color: var(--ochre-deep);
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+
+  form {
+    margin-top: 32px;
+    padding-top: 28px;
+    border-top: 1px solid var(--sage-line);
+  }
+
+  .form-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 22px;
+    margin: 0 0 4px;
+    color: var(--jungle-deep);
+  }
+  .form-hint {
+    font-size: 14px;
+    color: #5C6B57;
+    margin: 0 0 24px;
+  }
+
+  .field {
+    margin-bottom: 18px;
+  }
+  label {
+    display: block;
+    font-size: 12.5px;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: #5C6B57;
+    margin-bottom: 7px;
+  }
+  input {
+    width: 100%;
+    font-family: 'Public Sans', sans-serif;
+    font-size: 16px;
+    padding: 13px 14px;
+    border-radius: 9px;
+    border: 1.5px solid var(--sage-line);
+    background: var(--white);
+    color: var(--ink);
+    outline: none;
+    transition: border-color 0.15s ease;
+  }
+  input::placeholder { color: #A6AD9C; }
+  input:focus {
+    border-color: var(--ochre);
+  }
+  input:focus-visible {
+    outline: 2px solid var(--ochre);
+    outline-offset: 1px;
+  }
+
+  .hp-field { position: absolute; left: -9999px; opacity: 0; }
+
+  button[type="submit"] {
+    width: 100%;
+    background: var(--ochre-deep);
+    color: var(--white);
+    border: none;
+    border-radius: 9px;
+    padding: 15px 18px;
+    font-family: 'Public Sans', sans-serif;
+    font-size: 15.5px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    cursor: pointer;
+    transition: background 0.15s ease, transform 0.1s ease;
+    margin-top: 6px;
+  }
+  button[type="submit"]:hover { background: #82501A; }
+  button[type="submit"]:active { transform: scale(0.99); }
+  button[type="submit"]:focus-visible {
+    outline: 2px solid var(--jungle);
+    outline-offset: 2px;
+  }
+  button[disabled] {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  .error-msg {
+    color: #A13E2C;
+    font-size: 13.5px;
+    margin-top: 10px;
+    display: none;
+  }
+
+  #success {
+    display: none;
+    text-align: center;
+    padding: 48px 0 60px;
+  }
+  #success .mark {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: var(--jungle);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 20px;
+  }
+  #success h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 24px;
+    margin: 0 0 10px;
+    color: var(--jungle-deep);
+  }
+  #success p {
+    font-size: 14.5px;
+    color: #5C6B57;
+    max-width: 340px;
+    margin: 0 auto;
+    line-height: 1.55;
+  }
+
+  footer {
+    text-align: center;
+    padding: 32px 24px 48px;
+    font-size: 12.5px;
+    color: #8A9284;
+    letter-spacing: 0.02em;
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="plot-grid" aria-hidden="true">
+    <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
+      <g stroke="#F8F3E6" stroke-width="0.6" opacity="0.5">
+        <line x1="0" y1="40" x2="400" y2="40"/>
+        <line x1="0" y1="95" x2="400" y2="95"/>
+        <line x1="0" y1="150" x2="400" y2="150"/>
+        <line x1="0" y1="205" x2="400" y2="205"/>
+        <line x1="0" y1="260" x2="400" y2="260"/>
+        <line x1="55" y1="0" x2="55" y2="300"/>
+        <line x1="130" y1="0" x2="130" y2="300"/>
+        <line x1="205" y1="0" x2="205" y2="300"/>
+        <line x1="280" y1="0" x2="280" y2="300"/>
+        <line x1="355" y1="0" x2="355" y2="300"/>
+      </g>
+    </svg>
+  </div>
+  <p class="eyebrow reveal">Evento de asesores</p>
+  <h1 class="reveal reveal-2">Jardines de<br/>Mazaltepec</h1>
+  <p class="hero-sub reveal reveal-3">Presentación de la Etapa 2 y arranque de preventa. Confirma tu lugar y trae a tu equipo.</p>
+  <div class="detail-card reveal reveal-4">
+    <div class="detail-row">
+      <span class="detail-label">Fecha</span>
+      <span class="detail-value">Miércoles 2 de septiembre</span>
+    </div>
+    <div class="detail-row">
+      <span class="detail-label">Sede</span>
+      <span class="detail-value detail-pending">Se confirma en breve — te avisamos por WhatsApp</span>
+    </div>
+    <div class="detail-row">
+      <span class="detail-label">Hora</span>
+      <span class="detail-value detail-pending">Se confirma en breve — te avisamos por WhatsApp</span>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="highlights">
+    <h2>Qué te llevas ese día</h2>
+    <ul class="highlight-list">
+      <li><span class="highlight-mark">—</span> Plano y lista de precios de la Etapa 2, impresos</li>
+      <li><span class="highlight-mark">—</span> Condiciones de comisión y apartado por escrito</li>
+      <li><span class="highlight-mark">—</span> Acceso al sistema para registrar a tus clientes</li>
+      <li><span class="highlight-mark">—</span> Precio de friends &amp; family para quien aparte el 10 de septiembre</li>
+    </ul>
+  </section>
+
+  <form id="rsvp-form" novalidate>
+    <p class="form-title">Confirma tu asistencia</p>
+    <p class="form-hint">Toma menos de un minuto.</p>
+
+    <div class="field">
+      <label for="name">Nombre completo</label>
+      <input type="text" id="name" name="name" placeholder="Tu nombre" required autocomplete="name" />
+    </div>
+
+    <div class="field">
+      <label for="phone">WhatsApp / Teléfono</label>
+      <input type="tel" id="phone" name="phone" placeholder="993 000 0000" required autocomplete="tel" />
+    </div>
+
+    <div class="field">
+      <label for="email">Correo</label>
+      <input type="email" id="email" name="email" placeholder="tu@correo.com" autocomplete="email" />
+    </div>
+
+    <div class="field">
+      <label for="agency">Inmobiliaria / agencia</label>
+      <input type="text" id="agency" name="agency" placeholder="Opcional" autocomplete="organization" />
+    </div>
+
+    <input class="hp-field" type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+
+    <button type="submit" id="submit-btn">Confirmar asistencia</button>
+    <p class="error-msg" id="error-msg" role="alert"></p>
+  </form>
+
+  <div id="success">
+    <div class="mark">✓</div>
+    <h2>Listo, te esperamos</h2>
+    <p>Ya quedó tu confirmación. En cuanto se cierre la sede y la hora, te llega un mensaje por WhatsApp.</p>
+  </div>
+</main>
+
+<footer>
+  Jardines de Mazaltepec · mazaltepec.com
+</footer>
+
+<script>
+  const form = document.getElementById('rsvp-form');
+  const errorMsg = document.getElementById('error-msg');
+  const submitBtn = document.getElementById('submit-btn');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    errorMsg.style.display = 'none';
+
+    const name = document.getElementById('name').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const agency = document.getElementById('agency').value.trim();
+    const website = document.getElementById('website').value.trim();
+
+    if (!name || !phone) {
+      errorMsg.textContent = 'Nombre y teléfono son obligatorios.';
+      errorMsg.style.display = 'block';
+      return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Enviando…';
+
+    try {
+      const res = await fetch('/api/rsvp', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, phone, email, agency, website })
+      });
+      const data = await res.json();
+
+      if (!res.ok || !data.ok) {
+        throw new Error(data.error || 'No se pudo enviar. Intenta de nuevo.');
+      }
+
+      form.style.display = 'none';
+      document.getElementById('success').style.display = 'block';
+    } catch (err) {
+      errorMsg.textContent = err.message || 'Algo falló. Intenta de nuevo en un momento.';
+      errorMsg.style.display = 'block';
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Confirmar asistencia';
+    }
+  });
+</script>
+
+</body>
+</html>
