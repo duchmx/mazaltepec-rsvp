@@ -1,603 +1,673 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-<title>Confirma tu asistencia · Jardines de Mazaltepec</title>
-<meta name="description" content="RSVP — Evento de asesores, lanzamiento de preventa Etapa 2, Jardines de Mazaltepec." />
-<meta name="theme-color" content="#184A3A" />
-<link rel="icon" type="image/svg+xml" href="assets/favicons/favicon.svg" />
-<link rel="manifest" href="assets/favicons/site.webmanifest" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="tokens/tokens.css">
-<style>
-  :root {
-    --pine-800: #184A3A;
-    --pine-900: #103A2C;
-    --pine-700: #1F5E49;
-    --pine-600: #2A7058;
-    --leaf-400: #82B280;
-    --leaf-200: #BED4BE;
-    --camel-500: #B3996B;
-    --camel-600: #9C814F;
-    --camel-700: #7E683D;
-    --cream-100: #EFF0E2;
-    --cream-50: #F7F8F1;
-    --ink-900: #14201B;
-    --ink-700: #2C3A33;
-    --ink-600: #4B5A52;
-    --ink-400: #8A958D;
-    --white: #FFFFFF;
-    --radius-box: 0.75rem;
-    --radius-pill: 9999px;
-    --ease-brand: cubic-bezier(0.2, 0, 0, 1);
-  }
-
-  * { box-sizing: border-box; }
-
-  html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    height: 100dvh;
-    overflow: hidden;
-    background: var(--cream-100);
-    color: var(--ink-900);
-    font-family: 'Poppins', 'Trebuchet MS', system-ui, -apple-system, sans-serif;
-    font-weight: 400;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  .screen-wrap {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    height: 100dvh;
-    max-height: 100dvh;
-    overflow: hidden;
-  }
-
-  @media (prefers-reduced-motion: no-preference) {
-    .reveal {
-      animation: rise 0.5s var(--ease-brand) both;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Confirma tu asistencia · Jardines de Mazaltepec</title>
+  <meta name="description"
+    content="RSVP — Evento de asesores, lanzamiento de preventa Etapa 2, Jardines de Mazaltepec." />
+  <meta name="theme-color" content="#184A3A" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicons/favicon.svg" />
+  <link rel="manifest" href="assets/favicons/site.webmanifest" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="tokens/tokens.css">
+  <style>
+    :root {
+      --pine-800: #184A3A;
+      --pine-900: #103A2C;
+      --pine-700: #1F5E49;
+      --pine-600: #2A7058;
+      --leaf-400: #82B280;
+      --leaf-200: #BED4BE;
+      --camel-500: #B3996B;
+      --camel-600: #9C814F;
+      --camel-700: #7E683D;
+      --cream-100: #EFF0E2;
+      --cream-50: #F7F8F1;
+      --ink-900: #14201B;
+      --ink-700: #2C3A33;
+      --ink-600: #4B5A52;
+      --ink-400: #8A958D;
+      --white: #FFFFFF;
+      --radius-box: 0.75rem;
+      --radius-pill: 9999px;
+      --ease-brand: cubic-bezier(0.2, 0, 0, 1);
     }
-    .reveal-2 { animation-delay: 0.06s; }
-    .reveal-3 { animation-delay: 0.12s; }
-    .reveal-4 { animation-delay: 0.18s; }
-    @keyframes rise {
-      from { opacity: 0; transform: translateY(8px); }
-      to { opacity: 1; transform: translateY(0); }
+
+    * {
+      box-sizing: border-box;
     }
-  }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      height: 100dvh;
+      overflow: hidden;
+      background: var(--cream-100);
+      color: var(--ink-900);
+      font-family: 'Poppins', 'Trebuchet MS', system-ui, -apple-system, sans-serif;
+      font-weight: 400;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .screen-wrap {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      height: 100dvh;
+      max-height: 100dvh;
+      overflow: hidden;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .reveal {
+        animation: rise 0.5s var(--ease-brand) both;
+      }
+
+      .reveal-2 {
+        animation-delay: 0.06s;
+      }
+
+      .reveal-3 {
+        animation-delay: 0.12s;
+      }
+
+      .reveal-4 {
+        animation-delay: 0.18s;
+      }
+
+      @keyframes rise {
+        from {
+          opacity: 0;
+          transform: translateY(8px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    }
 
 
-  /* ─────────────────────────────────────────
+    /* ─────────────────────────────────────────
      MOBILE STYLES (Default / < 768px)
      Hero expands to take remaining space,
      detail-card centered & fit-content
   ───────────────────────────────────────── */
 
-  header.hero {
-    position: relative;
-    background: var(--pine-800);
-    color: var(--white);
-    padding: clamp(16px, 2.8vh, 26px) clamp(16px, 4vw, 24px);
-    flex: 1 1 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    overflow: hidden;
-  }
-
-  .hero-inner {
-    max-width: 460px;
-    width: 100%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .brand-logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    margin-bottom: clamp(8px, 1.4vh, 14px);
-  }
-
-  .brand-logo-img {
-    height: clamp(26px, 4.2vh, 38px);
-    width: auto;
-    max-width: 240px;
-    display: block;
-    object-fit: contain;
-  }
-
-  .eyebrow {
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--leaf-200);
-    margin: 0 0 3px;
-    text-align: center;
-  }
-
-  h1.hero-title {
-    font-size: clamp(20px, 3.2vh, 26px);
-    font-weight: 600;
-    line-height: 1.18;
-    margin: 0 0 4px;
-    letter-spacing: -0.01em;
-    color: var(--white);
-    text-align: center;
-  }
-
-  .hero-sub {
-    font-size: clamp(12.5px, 1.7vh, 14px);
-    line-height: 1.38;
-    font-weight: 300;
-    color: rgba(255, 255, 255, 0.88);
-    margin: 0 0 clamp(10px, 1.8vh, 16px);
-    text-align: center;
-    max-width: 380px;
-  }
-
-  .detail-card {
-    background: rgba(255, 255, 255, 0.09);
-    border: 1px solid rgba(255, 255, 255, 0.16);
-    border-radius: var(--radius-box);
-    padding: clamp(8px, 1.2vh, 12px) clamp(14px, 3.5vw, 20px);
-    backdrop-filter: blur(4px);
-    width: fit-content;
-    max-width: 100%;
-    margin: 0 auto;
-  }
-
-  .detail-row {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 3.5px 0;
-    font-size: clamp(12px, 1.6vh, 13.5px);
-    line-height: 1.3;
-  }
-  .detail-row + .detail-row {
-    border-top: 1px solid rgba(255, 255, 255, 0.12);
-  }
-  .detail-icon {
-    width: 15px;
-    height: 15px;
-    flex-shrink: 0;
-    color: var(--leaf-400);
-  }
-  .detail-label {
-    color: var(--leaf-200);
-    font-weight: 500;
-    min-width: 46px;
-    flex-shrink: 0;
-    font-size: 10.5px;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-  .detail-value {
-    color: var(--white);
-    font-weight: 400;
-    font-size: clamp(12px, 1.6vh, 13.5px);
-  }
-
-  main {
-    flex: 0 0 auto;
-    max-width: 440px;
-    width: 100%;
-    margin: 0 auto;
-    padding: clamp(10px, 1.8vh, 16px) clamp(16px, 4vw, 24px) 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    overflow: hidden;
-  }
-
-  form {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .form-title {
-    font-size: clamp(16px, 2.2vh, 19px);
-    font-weight: 600;
-    margin: 0 0 clamp(6px, 1.2vh, 10px);
-    color: var(--ink-900);
-    text-align: center;
-  }
-
-  .field {
-    margin-bottom: clamp(6px, 1.1vh, 9px);
-  }
-  label {
-    display: block;
-    font-size: 10.5px;
-    font-weight: 500;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: var(--ink-600);
-    margin-bottom: 2px;
-  }
-  input {
-    width: 100%;
-    font-family: 'Poppins', system-ui, -apple-system, sans-serif;
-    font-size: clamp(13px, 1.65vh, 14px);
-    font-weight: 400;
-    padding: clamp(7px, 1vh, 9.5px) 12px;
-    border-radius: var(--radius-box);
-    border: 1.5px solid #E2E2D6;
-    background: var(--white);
-    color: var(--ink-900);
-    outline: none;
-    transition: border-color 0.2s var(--ease-brand), box-shadow 0.2s var(--ease-brand);
-  }
-  input::placeholder { color: var(--ink-400); }
-  input:focus {
-    border-color: var(--pine-600);
-    box-shadow: 0 0 0 3px rgba(24, 74, 58, 0.12);
-  }
-  input:focus-visible {
-    outline: none;
-  }
-
-  .hp-field { position: absolute; left: -9999px; opacity: 0; }
-
-  button[type="submit"] {
-    width: 100%;
-    background: var(--camel-500);
-    color: var(--white);
-    border: none;
-    border-radius: var(--radius-box);
-    padding: clamp(9px, 1.3vh, 11.5px) 14px;
-    font-family: 'Poppins', system-ui, -apple-system, sans-serif;
-    font-size: clamp(13px, 1.65vh, 14px);
-    font-weight: 600;
-    letter-spacing: 0.01em;
-    cursor: pointer;
-    transition: background 0.2s var(--ease-brand), transform 0.1s var(--ease-brand);
-    margin-top: 3px;
-  }
-  button[type="submit"]:hover { background: var(--camel-600); }
-  button[type="submit"]:active { transform: scale(0.99); }
-  button[type="submit"]:focus-visible {
-    outline: 2px solid var(--pine-800);
-    outline-offset: 2px;
-  }
-  button[disabled] {
-    opacity: 0.65;
-    cursor: not-allowed;
-  }
-
-  .error-msg {
-    color: #B3453B;
-    font-size: 11.5px;
-    margin-top: 5px;
-    margin-bottom: 0;
-    display: none;
-  }
-
-  #success {
-    display: none;
-    text-align: center;
-    padding: clamp(14px, 2.5vh, 26px) 0;
-  }
-  #success .mark {
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    background: var(--pine-800);
-    color: var(--white);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 10px;
-    font-size: 16px;
-  }
-  #success h2 {
-    font-size: clamp(18px, 2.4vh, 21px);
-    font-weight: 600;
-    margin: 0 0 4px;
-    color: var(--ink-900);
-  }
-  #success p {
-    font-size: 13px;
-    color: var(--ink-600);
-    font-weight: 300;
-    max-width: 300px;
-    margin: 0 auto;
-    line-height: 1.45;
-  }
-
-  footer {
-    flex-shrink: 0;
-    text-align: center;
-    padding: clamp(6px, 1vh, 10px) 16px clamp(8px, 1.4vh, 12px);
-    font-size: 11px;
-    font-weight: 300;
-    color: var(--ink-400);
-    letter-spacing: 0.02em;
-  }
-
-  /* ─────────────────────────────────────────
-     DESKTOP STYLES (>= 768px)
-     Spacious hero, larger card fonts & pill bar
-  ───────────────────────────────────────── */
-
-  @media (min-width: 768px) {
     header.hero {
+      position: relative;
+      background: var(--pine-800);
+      color: var(--white);
+      padding: clamp(16px, 2.8vh, 26px) clamp(16px, 4vw, 24px);
       flex: 1 1 auto;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: clamp(32px, 5vh, 52px) 32px clamp(28px, 4.5vh, 44px);
+      overflow: hidden;
     }
 
     .hero-inner {
-      max-width: 820px;
+      max-width: 460px;
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     .brand-logo {
-      margin-bottom: clamp(14px, 2.2vh, 22px);
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      width: 100%;
+      margin-bottom: clamp(8px, 1.4vh, 14px);
     }
 
     .brand-logo-img {
-      height: clamp(34px, 5vh, 48px);
-      max-width: 300px;
+      height: clamp(26px, 4.2vh, 38px);
+      width: auto;
+      max-width: 240px;
+      display: block;
+      object-fit: contain;
     }
 
     .eyebrow {
-      font-size: 12px;
-      margin-bottom: 5px;
-      letter-spacing: 0.16em;
+      font-size: 11.5px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--leaf-200);
+      margin: 0 0 10px 10px;
+      text-align: left;
+      width: 100%;
     }
 
     h1.hero-title {
-      font-size: clamp(26px, 3.8vh, 34px);
-      margin-bottom: 8px;
+      font-size: clamp(20px, 3.2vh, 26px);
+      font-weight: 600;
+      line-height: 1.18;
+      margin: 0 0 4px;
+      letter-spacing: -0.01em;
+      color: var(--white);
+      text-align: center;
     }
 
     .hero-sub {
-      font-size: clamp(14.5px, 2vh, 16.5px);
-      margin-bottom: clamp(18px, 2.8vh, 26px);
-      line-height: 1.5;
-      max-width: 480px;
+      font-size: clamp(12.5px, 1.7vh, 14px);
+      line-height: 1.38;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.88);
+      margin: 0 0 clamp(10px, 1.8vh, 16px);
+      text-align: center;
+      max-width: 380px;
     }
 
     .detail-card {
+      background: rgba(255, 255, 255, 0.09);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: var(--radius-box);
+      padding: clamp(8px, 1.2vh, 12px) clamp(14px, 3.5vw, 20px);
+      backdrop-filter: blur(4px);
       width: fit-content;
       max-width: 100%;
       margin: 0 auto;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      gap: 22px;
-      padding: 12px 28px;
-      border-radius: var(--radius-pill);
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.2);
     }
 
     .detail-row {
-      padding: 0;
+      display: flex;
+      align-items: center;
       gap: 10px;
-      font-size: 15px;
-      white-space: nowrap;
+      padding: 3.5px 0;
+      font-size: clamp(12px, 1.6vh, 13.5px);
+      line-height: 1.3;
     }
 
-    .detail-row + .detail-row {
-      border-top: none;
-      border-left: 1px solid rgba(255, 255, 255, 0.25);
-      padding-left: 22px;
+    .detail-row+.detail-row {
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
     }
 
     .detail-icon {
-      width: 18px;
-      height: 18px;
+      width: 15px;
+      height: 15px;
+      flex-shrink: 0;
+      color: var(--leaf-400);
     }
 
     .detail-label {
-      font-size: 11.5px;
-      min-width: auto;
-      letter-spacing: 0.06em;
+      color: var(--leaf-200);
+      font-weight: 500;
+      min-width: 46px;
+      flex-shrink: 0;
+      font-size: 10.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
     }
 
     .detail-value {
-      font-size: 15px;
-      font-weight: 500;
+      color: var(--white);
+      font-weight: 400;
+      font-size: clamp(12px, 1.6vh, 13.5px);
     }
 
     main {
       flex: 0 0 auto;
-      max-width: 500px;
-      padding: clamp(20px, 3vh, 32px) 24px clamp(8px, 1.5vh, 14px);
+      max-width: 440px;
+      width: 100%;
+      margin: 0 auto;
+      padding: clamp(24px, 8vh, 40px) clamp(16px, 4vw, 30px) clamp(20px, 8vh, 150px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    form {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
     }
 
     .form-title {
-      font-size: clamp(19px, 2.5vh, 22px);
-      margin-bottom: clamp(12px, 1.8vh, 18px);
-      text-align: center;
+      font-size: clamp(16px, 2.2vh, 19px);
+      font-weight: 600;
+      margin: 0 0 clamp(8px, 1.4vh, 12px);
+      color: var(--ink-900);
+      text-align: left;
     }
 
     .field {
-      margin-bottom: clamp(10px, 1.5vh, 14px);
+      margin-bottom: clamp(6px, 1.1vh, 9px);
     }
 
     label {
-      font-size: 11.5px;
-      margin-bottom: 4px;
+      display: block;
+      font-size: 10.5px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--ink-600);
+      margin-bottom: 2px;
     }
 
     input {
-      font-size: 15px;
-      padding: clamp(10px, 1.4vh, 13px) 15px;
-      border-radius: 10px;
+      width: 100%;
+      font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+      font-size: clamp(13px, 1.65vh, 14px);
+      font-weight: 400;
+      padding: clamp(7px, 1vh, 9.5px) 12px;
+      border-radius: var(--radius-box);
+      border: 1.5px solid #E2E2D6;
+      background: var(--white);
+      color: var(--ink-900);
+      outline: none;
+      transition: border-color 0.2s var(--ease-brand), box-shadow 0.2s var(--ease-brand);
+    }
+
+    input::placeholder {
+      color: var(--ink-400);
+    }
+
+    input:focus {
+      border-color: var(--pine-600);
+      box-shadow: 0 0 0 3px rgba(24, 74, 58, 0.12);
+    }
+
+    input:focus-visible {
+      outline: none;
+    }
+
+    .hp-field {
+      position: absolute;
+      left: -9999px;
+      opacity: 0;
     }
 
     button[type="submit"] {
-      font-size: 15.5px;
-      padding: clamp(12px, 1.6vh, 14.5px) 18px;
-      margin-top: 6px;
-      border-radius: 10px;
+      width: 100%;
+      background: var(--camel-500);
+      color: var(--white);
+      border: none;
+      border-radius: var(--radius-box);
+      padding: clamp(9px, 1.3vh, 11.5px) 14px;
+      font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+      font-size: clamp(13px, 1.65vh, 14px);
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      cursor: pointer;
+      transition: background 0.2s var(--ease-brand), transform 0.1s var(--ease-brand);
+      margin-top: 3px;
+    }
+
+    button[type="submit"]:hover {
+      background: var(--camel-600);
+    }
+
+    button[type="submit"]:active {
+      transform: scale(0.99);
+    }
+
+    button[type="submit"]:focus-visible {
+      outline: 2px solid var(--pine-800);
+      outline-offset: 2px;
+    }
+
+    button[disabled] {
+      opacity: 0.65;
+      cursor: not-allowed;
+    }
+
+    .error-msg {
+      color: #B3453B;
+      font-size: 11.5px;
+      margin-top: 5px;
+      margin-bottom: 0;
+      display: none;
     }
 
     #success {
-      padding: clamp(24px, 4vh, 40px) 0;
+      display: none;
+      text-align: center;
+      padding: clamp(14px, 2.5vh, 26px) 0;
     }
+
     #success .mark {
-      width: 44px;
-      height: 44px;
-      font-size: 18px;
-      margin-bottom: 14px;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--pine-800);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 10px;
+      font-size: 16px;
     }
+
     #success h2 {
-      font-size: 23px;
-      margin-bottom: 6px;
+      font-size: clamp(18px, 2.4vh, 21px);
+      font-weight: 600;
+      margin: 0 0 4px;
+      color: var(--ink-900);
     }
+
     #success p {
-      font-size: 14.5px;
-      max-width: 360px;
+      font-size: 13px;
+      color: var(--ink-600);
+      font-weight: 300;
+      max-width: 300px;
+      margin: 0 auto;
+      line-height: 1.45;
     }
 
     footer {
-      padding: clamp(10px, 1.5vh, 16px) 24px clamp(12px, 2vh, 18px);
-      font-size: 11.5px;
-    }
-  }
-</style>
-</head>
-<body>
-
-<div class="screen-wrap">
-  <header class="hero">
-    <div class="hero-inner">
-      <div class="brand-logo reveal">
-        <img src="assets/logo/jm-horizontal-blanco.svg" alt="Jardines de Mazaltepec" class="brand-logo-img" />
-      </div>
-
-      <p class="eyebrow reveal reveal-2">Evento de asesores</p>
-      <h1 class="hero-title reveal reveal-2">Presentación Etapa 2</h1>
-      <p class="hero-sub reveal reveal-3">Arranque de preventa exclusiva. Confirma tu lugar.</p>
-      
-      <div class="detail-card reveal reveal-4">
-        <div class="detail-row">
-          <svg class="detail-icon" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="14" y="22" width="72" height="66" rx="12"/>
-            <line x1="14" y1="42" x2="86" y2="42"/>
-            <line x1="32" y1="12" x2="32" y2="24"/>
-            <line x1="68" y1="12" x2="68" y2="24"/>
-            <circle cx="34" cy="60" r="3.5" fill="currentColor" stroke="none"/>
-            <circle cx="50" cy="60" r="3.5" fill="currentColor" stroke="none"/>
-            <circle cx="66" cy="60" r="3.5" fill="currentColor" stroke="none"/>
-          </svg>
-          <span class="detail-label">Fecha</span>
-          <span class="detail-value">Miércoles 2 de septiembre</span>
-        </div>
-        <div class="detail-row">
-          <svg class="detail-icon" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><path d="M50 91C50 91 77 63 77 41a27 27 0 1 0-54 0c0 22 27 50 27 50z"/><circle cx="50" cy="40" r="11"/></svg>
-          <span class="detail-label">Sede</span>
-          <span class="detail-value">Hotel Tabasco Inn</span>
-        </div>
-        <div class="detail-row">
-          <svg class="detail-icon" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><circle cx="50" cy="50" r="40"/><path d="M50 25v25l16 16"/></svg>
-          <span class="detail-label">Hora</span>
-          <span class="detail-value">6pm</span>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <main>
-    <form id="rsvp-form" novalidate>
-      <p class="form-title">Confirma tu asistencia</p>
-
-      <div class="field">
-        <label for="name">Nombre completo</label>
-        <input type="text" id="name" name="name" placeholder="Tu nombre" required autocomplete="name" />
-      </div>
-
-      <div class="field">
-        <label for="phone">WhatsApp / Teléfono</label>
-        <input type="tel" id="phone" name="phone" placeholder="993 000 0000" required autocomplete="tel" />
-      </div>
-
-      <div class="field">
-        <label for="email">Correo</label>
-        <input type="email" id="email" name="email" placeholder="tu@correo.com" autocomplete="email" />
-      </div>
-
-      <input class="hp-field" type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
-
-      <button type="submit" id="submit-btn">Confirmar asistencia</button>
-      <p class="error-msg" id="error-msg" role="alert"></p>
-    </form>
-
-    <div id="success">
-      <div class="mark">✓</div>
-      <h2>Listo, te esperamos</h2>
-      <p>Ya quedó tu confirmación. Te esperamos en el Hotel Tabasco Inn a las 6:00 pm.</p>
-    </div>
-  </main>
-
-  <footer>
-    Jardines de Mazaltepec · mazaltepec.com
-  </footer>
-</div>
-
-<script>
-  const form = document.getElementById('rsvp-form');
-  const errorMsg = document.getElementById('error-msg');
-  const submitBtn = document.getElementById('submit-btn');
-
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    errorMsg.style.display = 'none';
-
-    const name = document.getElementById('name').value.trim();
-    const phone = document.getElementById('phone').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const website = document.getElementById('website').value.trim();
-
-    if (!name || !phone) {
-      errorMsg.textContent = 'Nombre y teléfono son obligatorios.';
-      errorMsg.style.display = 'block';
-      return;
+      flex-shrink: 0;
+      text-align: center;
+      padding: clamp(6px, 1vh, 10px) 16px clamp(8px, 1.4vh, 12px);
+      font-size: 11px;
+      font-weight: 300;
+      color: var(--ink-400);
+      letter-spacing: 0.02em;
     }
 
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Enviando…';
+    /* ─────────────────────────────────────────
+     DESKTOP STYLES (>= 768px)
+     Spacious hero, larger card fonts & pill bar
+  ───────────────────────────────────────── */
 
-    try {
-      const res = await fetch('/api/rsvp', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, phone, email, website })
-      });
-      const data = await res.json();
-
-      if (!res.ok || !data.ok) {
-        throw new Error(data.error || 'No se pudo enviar. Intenta de nuevo.');
+    @media (min-width: 768px) {
+      header.hero {
+        flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: clamp(32px, 5vh, 52px) 32px clamp(28px, 4.5vh, 44px);
       }
 
-      form.style.display = 'none';
-      document.getElementById('success').style.display = 'block';
-    } catch (err) {
-      errorMsg.textContent = err.message || 'Algo falló. Intenta de nuevo en un momento.';
-      errorMsg.style.display = 'block';
-      submitBtn.disabled = false;
-      submitBtn.textContent = 'Confirmar asistencia';
+      .hero-inner {
+        width: fit-content;
+        max-width: 820px;
+        margin: 0 auto;
+      }
+
+      .brand-logo {
+        width: 100%;
+        justify-content: flex-start;
+        margin-bottom: clamp(14px, 2.2vh, 22px);
+      }
+
+      .brand-logo-img {
+        height: clamp(34px, 5vh, 48px);
+        max-width: 300px;
+      }
+
+      .eyebrow {
+        font-size: 13px;
+        margin-bottom: 6px;
+        margin-left: 60px;
+        letter-spacing: 0.16em;
+        text-align: left;
+        width: 100%;
+      }
+
+      h1.hero-title {
+        font-size: clamp(26px, 3.8vh, 34px);
+        margin-bottom: 8px;
+      }
+
+      .hero-sub {
+        font-size: clamp(14.5px, 2vh, 16.5px);
+        margin-bottom: clamp(18px, 2.8vh, 26px);
+        line-height: 1.5;
+        max-width: 480px;
+      }
+
+      .detail-card {
+        width: fit-content;
+        max-width: 100%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 22px;
+        padding: 12px 28px;
+        border-radius: var(--radius-pill);
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .detail-row {
+        padding: 0;
+        gap: 10px;
+        font-size: 15px;
+        white-space: nowrap;
+      }
+
+      .detail-row+.detail-row {
+        border-top: none;
+        border-left: 1px solid rgba(255, 255, 255, 0.25);
+        padding-left: 22px;
+      }
+
+      .detail-icon {
+        width: 18px;
+        height: 18px;
+      }
+
+      .detail-label {
+        font-size: 11.5px;
+        min-width: auto;
+        letter-spacing: 0.06em;
+      }
+
+      .detail-value {
+        font-size: 15px;
+        font-weight: 500;
+      }
+
+      main {
+        flex: 0 0 auto;
+        max-width: 500px;
+        padding: clamp(36px, 5.5vh, 56px) 24px clamp(28px, 4.2vh, 44px);
+      }
+
+      .form-title {
+        font-size: clamp(19px, 2.5vh, 22px);
+        margin-bottom: clamp(14px, 2vh, 20px);
+        text-align: left;
+      }
+
+      .field {
+        margin-bottom: clamp(10px, 1.5vh, 14px);
+      }
+
+      label {
+        font-size: 11.5px;
+        margin-bottom: 4px;
+      }
+
+      input {
+        font-size: 15px;
+        padding: clamp(10px, 1.4vh, 13px) 15px;
+        border-radius: 10px;
+      }
+
+      button[type="submit"] {
+        font-size: 15.5px;
+        padding: clamp(12px, 1.6vh, 14.5px) 18px;
+        margin-top: 6px;
+        border-radius: 10px;
+      }
+
+      #success {
+        padding: clamp(24px, 4vh, 40px) 0;
+      }
+
+      #success .mark {
+        width: 44px;
+        height: 44px;
+        font-size: 18px;
+        margin-bottom: 14px;
+      }
+
+      #success h2 {
+        font-size: 23px;
+        margin-bottom: 6px;
+      }
+
+      #success p {
+        font-size: 14.5px;
+        max-width: 360px;
+      }
+
+      footer {
+        padding: clamp(10px, 1.5vh, 16px) 24px clamp(12px, 2vh, 18px);
+        font-size: 11.5px;
+      }
     }
-  });
-</script>
+  </style>
+</head>
+
+<body>
+
+  <div class="screen-wrap">
+    <header class="hero">
+      <div class="hero-inner">
+        <div class="brand-logo reveal">
+          <img src="assets/logo/jm-horizontal-blanco.svg" alt="Jardines de Mazaltepec" class="brand-logo-img" />
+        </div>
+
+        <p class="eyebrow reveal reveal-2">Evento de asesores</p>
+        <h1 class="hero-title reveal reveal-2">Presentación Etapa 2</h1>
+        <p class="hero-sub reveal reveal-3">Arranque de preventa exclusiva. Confirma tu lugar.</p>
+
+        <div class="detail-card reveal reveal-4">
+          <div class="detail-row">
+            <svg class="detail-icon" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M50 91C50 91 77 63 77 41a27 27 0 1 0-54 0c0 22 27 50 27 50z" />
+              <circle cx="50" cy="40" r="11" />
+            </svg>
+            <span class="detail-label">Sede</span>
+            <span class="detail-value">Hotel Tabasco Inn</span>
+          </div>
+          <div class="detail-row">
+            <svg class="detail-icon" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect x="14" y="22" width="72" height="66" rx="12" />
+              <line x1="14" y1="42" x2="86" y2="42" />
+              <line x1="32" y1="12" x2="32" y2="24" />
+              <line x1="68" y1="12" x2="68" y2="24" />
+              <circle cx="34" cy="60" r="3.5" fill="currentColor" stroke="none" />
+              <circle cx="50" cy="60" r="3.5" fill="currentColor" stroke="none" />
+              <circle cx="66" cy="60" r="3.5" fill="currentColor" stroke="none" />
+            </svg>
+            <span class="detail-label">Fecha</span>
+            <span class="detail-value">Miércoles 2 de septiembre</span>
+          </div>
+          <div class="detail-row">
+            <svg class="detail-icon" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6"
+              stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="50" cy="50" r="40" />
+              <path d="M50 25v25l16 16" />
+            </svg>
+            <span class="detail-label">Hora</span>
+            <span class="detail-value">6pm</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <form id="rsvp-form" novalidate>
+        <p class="form-title">Confirma tu asistencia</p>
+
+        <div class="field">
+          <label for="name">Nombre completo</label>
+          <input type="text" id="name" name="name" placeholder="Tu nombre" required autocomplete="name" />
+        </div>
+
+        <div class="field">
+          <label for="phone">WhatsApp / Teléfono</label>
+          <input type="tel" id="phone" name="phone" placeholder="993 000 0000" required autocomplete="tel" />
+        </div>
+
+        <div class="field">
+          <label for="email">Correo</label>
+          <input type="email" id="email" name="email" placeholder="tu@correo.com" autocomplete="email" />
+        </div>
+
+        <input class="hp-field" type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+
+        <button type="submit" id="submit-btn">Confirmar asistencia</button>
+        <p class="error-msg" id="error-msg" role="alert"></p>
+      </form>
+
+      <div id="success">
+        <div class="mark">✓</div>
+        <h2>Listo, te esperamos</h2>
+        <p>Ya quedó tu confirmación. Te esperamos en el Hotel Tabasco Inn a las 6:00 pm.</p>
+      </div>
+    </main>
+
+    <footer>
+      Jardines de Mazaltepec · mazaltepec.com
+    </footer>
+  </div>
+
+  <script>
+    const form = document.getElementById('rsvp-form');
+    const errorMsg = document.getElementById('error-msg');
+    const submitBtn = document.getElementById('submit-btn');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      errorMsg.style.display = 'none';
+
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const website = document.getElementById('website').value.trim();
+
+      if (!name || !phone) {
+        errorMsg.textContent = 'Nombre y teléfono son obligatorios.';
+        errorMsg.style.display = 'block';
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Enviando…';
+
+      try {
+        const res = await fetch('/api/rsvp', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, phone, email, website })
+        });
+        const data = await res.json();
+
+        if (!res.ok || !data.ok) {
+          throw new Error(data.error || 'No se pudo enviar. Intenta de nuevo.');
+        }
+
+        form.style.display = 'none';
+        document.getElementById('success').style.display = 'block';
+      } catch (err) {
+        errorMsg.textContent = err.message || 'Algo falló. Intenta de nuevo en un momento.';
+        errorMsg.style.display = 'block';
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Confirmar asistencia';
+      }
+    });
+  </script>
 
 </body>
+
 </html>
