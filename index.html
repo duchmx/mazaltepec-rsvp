@@ -73,6 +73,11 @@
   }
 
 
+  /* ─────────────────────────────────────────
+     MOBILE STYLES (Default / < 768px)
+     Strict 1-screen fit without scrolling
+  ───────────────────────────────────────── */
+
   header.hero {
     position: relative;
     background: var(--pine-800);
@@ -94,7 +99,7 @@
   }
 
   .brand-logo-img {
-    height: clamp(26px, 4.5vh, 44px);
+    height: clamp(24px, 4vh, 36px);
     width: auto;
     max-width: 220px;
     display: block;
@@ -304,6 +309,138 @@
     font-weight: 300;
     color: var(--ink-400);
     letter-spacing: 0.02em;
+  }
+
+  /* ─────────────────────────────────────────
+     DESKTOP STYLES (>= 768px)
+     Spacious, comfortable, centered card with fit-content
+  ───────────────────────────────────────── */
+
+  @media (min-width: 768px) {
+    header.hero {
+      padding: clamp(26px, 3.8vh, 40px) 32px clamp(22px, 3.2vh, 34px);
+    }
+
+    .hero-inner {
+      max-width: 720px;
+    }
+
+    .brand-logo {
+      margin-bottom: clamp(12px, 1.8vh, 18px);
+    }
+
+    .brand-logo-img {
+      height: clamp(30px, 4.2vh, 42px);
+      max-width: 260px;
+    }
+
+    .eyebrow {
+      font-size: 11.5px;
+      margin-bottom: 4px;
+      letter-spacing: 0.16em;
+    }
+
+    h1.hero-title {
+      font-size: clamp(23px, 3.2vh, 30px);
+      margin-bottom: 6px;
+    }
+
+    .hero-sub {
+      font-size: clamp(13.5px, 1.7vh, 15px);
+      margin-bottom: clamp(14px, 2.2vh, 20px);
+      line-height: 1.5;
+    }
+
+    .detail-card {
+      width: fit-content;
+      max-width: 100%;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 18px;
+      padding: 9px 22px;
+      border-radius: var(--radius-pill);
+    }
+
+    .detail-row {
+      padding: 0;
+      gap: 8px;
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    .detail-row + .detail-row {
+      border-top: none;
+      border-left: 1px solid rgba(255, 255, 255, 0.2);
+      padding-left: 18px;
+    }
+
+    .detail-icon {
+      width: 15px;
+      height: 15px;
+    }
+
+    .detail-label {
+      font-size: 10.5px;
+      min-width: auto;
+    }
+
+    main {
+      max-width: 480px;
+      padding: clamp(18px, 2.8vh, 30px) 24px 0;
+    }
+
+    .form-title {
+      font-size: clamp(18px, 2.4vh, 21px);
+      margin-bottom: clamp(10px, 1.6vh, 16px);
+      text-align: center;
+    }
+
+    .field {
+      margin-bottom: clamp(9px, 1.5vh, 13px);
+    }
+
+    label {
+      font-size: 11px;
+      margin-bottom: 4px;
+    }
+
+    input {
+      font-size: 14.5px;
+      padding: clamp(9px, 1.3vh, 12px) 14px;
+      border-radius: 9px;
+    }
+
+    button[type="submit"] {
+      font-size: 15px;
+      padding: clamp(11px, 1.6vh, 14px) 18px;
+      margin-top: 6px;
+      border-radius: 9px;
+    }
+
+    #success {
+      padding: clamp(22px, 3.6vh, 36px) 0;
+    }
+    #success .mark {
+      width: 42px;
+      height: 42px;
+      font-size: 18px;
+      margin-bottom: 12px;
+    }
+    #success h2 {
+      font-size: 22px;
+      margin-bottom: 6px;
+    }
+    #success p {
+      font-size: 14px;
+      max-width: 360px;
+    }
+
+    footer {
+      padding: clamp(10px, 1.5vh, 16px) 24px clamp(12px, 2vh, 18px);
+      font-size: 11.5px;
+    }
   }
 </style>
 </head>
