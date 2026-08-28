@@ -12,3 +12,8 @@ CREATE TABLE IF NOT EXISTS public.rsvps (
 
 -- Enable Row Level Security (RLS)
 ALTER TABLE public.rsvps ENABLE ROW LEVEL SECURITY;
+
+-- Grant required permissions to service_role (fixes error 42501 permission denied)
+GRANT ALL ON TABLE public.rsvps TO service_role;
+GRANT ALL ON TABLE public.rsvps TO postgres;
+GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA public TO service_role;
