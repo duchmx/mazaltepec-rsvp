@@ -1,9 +1,10 @@
 // POST /api/rsvp
-// Guarda una confirmación de asistencia en la tabla "rsvps" de Supabase.
+// Guarda una confirmación de asistencia en Supabase y la envía al webhook de n8n si está configurado.
 //
-// Variables de entorno requeridas en Vercel (Project Settings > Environment Variables):
+// Variables de entorno en Vercel / .env.local:
 //   SUPABASE_URL              -> https://xxxxx.supabase.co
-//   SUPABASE_SERVICE_ROLE_KEY -> service_role key (NUNCA la anon/public key aquí; esta corre solo en servidor)
+//   SUPABASE_SERVICE_ROLE_KEY -> service_role key
+//   N8N_WEBHOOK_URL           -> URL del webhook de n8n (opcional)
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -30,13 +31,23 @@ export default async function handler(req, res) {
 
   const SUPABASE_URL = process.env.SUPABASE_URL;
   const SUPABASE_SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  const N8N_WEBHOOK_URL = process.env.N8N_WEBHOOK_URL;
 
   if (!SUPABASE_URL || !SUPABASE_SERVICE_ROLE_KEY) {
     console.error('Faltan variables de entorno de Supabase');
     return res.status(500).json({ ok: false, error: 'El sistema no está configurado todavía. Avisa a JD.' });
   }
 
+  const payload = {
+    name: name.trim(),
+    phone: phone.trim(),
+    email: email ? email.trim() : null,
+    agency: agency ? agency.trim() : null,
+    source: 'evento_2_sep'
+  };
+
   try {
+    // 1. Guardar en Supabase
     const response = await fetch(`${SUPABASE_URL}/rest/v1/rsvps`, {
       method: 'POST',
       headers: {
@@ -45,15 +56,7 @@ export default async function handler(req, res) {
         Authorization: `Bearer ${SUPABASE_SERVICE_ROLE_KEY}`,
         Prefer: 'return=minimal'
       },
-      body: JSON.stringify([
-        {
-          name: name.trim(),
-          phone: phone.trim(),
-          email: email ? email.trim() : null,
-          agency: agency ? agency.trim() : null,
-          source: 'evento_2_sep'
-        }
-      ])
+      body: JSON.stringify([payload])
     });
 
     if (!response.ok) {
@@ -62,9 +65,27 @@ export default async function handler(req, res) {
       return res.status(500).json({ ok: false, error: 'No se pudo guardar. Intenta de nuevo.' });
     }
 
+    // 2. Disparar webhook de n8n si está configurado
+    if (N8N_WEBHOOK_URL) {
+      try {
+        await fetch(N8N_WEBHOOK_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            ...payload,
+            created_at: new Date().toISOString()
+          })
+        });
+      } catch (webhookErr) {
+        console.error('Error al enviar al webhook de n8n:', webhookErr);
+        // No bloqueamos la respuesta exitosa al usuario si Supabase ya guardó el registro
+      }
+    }
+
     return res.status(200).json({ ok: true });
   } catch (err) {
     console.error('Error inesperado:', err);
     return res.status(500).json({ ok: false, error: 'No se pudo guardar. Intenta de nuevo.' });
   }
 }
+
