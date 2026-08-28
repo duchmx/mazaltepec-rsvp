@@ -75,110 +75,126 @@
 
   /* ─────────────────────────────────────────
      MOBILE STYLES (Default / < 768px)
-     Strict 1-screen fit without scrolling
+     Hero expands to take remaining space,
+     detail-card centered & fit-content
   ───────────────────────────────────────── */
 
   header.hero {
     position: relative;
     background: var(--pine-800);
     color: var(--white);
-    padding: clamp(14px, 2.4vh, 22px) clamp(16px, 4vw, 28px);
-    flex-shrink: 0;
+    padding: clamp(16px, 2.8vh, 26px) clamp(16px, 4vw, 24px);
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     overflow: hidden;
   }
 
   .hero-inner {
     max-width: 460px;
+    width: 100%;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .brand-logo {
     display: flex;
     align-items: center;
-    margin-bottom: clamp(8px, 1.3vh, 14px);
+    justify-content: center;
+    width: 100%;
+    margin-bottom: clamp(8px, 1.4vh, 14px);
   }
 
   .brand-logo-img {
-    height: clamp(24px, 4vh, 36px);
+    height: clamp(26px, 4.2vh, 38px);
     width: auto;
-    max-width: 220px;
+    max-width: 240px;
     display: block;
     object-fit: contain;
   }
 
   .eyebrow {
-    font-size: 10.5px;
+    font-size: 11px;
     font-weight: 500;
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--leaf-200);
-    margin: 0 0 2px;
+    margin: 0 0 3px;
+    text-align: center;
   }
 
   h1.hero-title {
-    font-size: clamp(18px, 2.7vh, 23px);
+    font-size: clamp(20px, 3.2vh, 26px);
     font-weight: 600;
-    line-height: 1.2;
-    margin: 0 0 3px;
+    line-height: 1.18;
+    margin: 0 0 4px;
     letter-spacing: -0.01em;
     color: var(--white);
     text-align: center;
   }
 
   .hero-sub {
-    font-size: clamp(12px, 1.45vh, 13px);
-    line-height: 1.35;
+    font-size: clamp(12.5px, 1.7vh, 14px);
+    line-height: 1.38;
     font-weight: 300;
-    color: rgba(255, 255, 255, 0.85);
-    margin: 0 0 clamp(8px, 1.3vh, 12px);
+    color: rgba(255, 255, 255, 0.88);
+    margin: 0 0 clamp(10px, 1.8vh, 16px);
     text-align: center;
+    max-width: 380px;
   }
 
   .detail-card {
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: rgba(255, 255, 255, 0.09);
+    border: 1px solid rgba(255, 255, 255, 0.16);
     border-radius: var(--radius-box);
-    padding: clamp(6px, 1vh, 9px) clamp(10px, 2vw, 14px);
+    padding: clamp(8px, 1.2vh, 12px) clamp(14px, 3.5vw, 20px);
     backdrop-filter: blur(4px);
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 auto;
   }
 
   .detail-row {
     display: flex;
     align-items: center;
-    gap: 8px;
-    padding: 3px 0;
-    font-size: clamp(11.5px, 1.4vh, 12.5px);
+    gap: 10px;
+    padding: 3.5px 0;
+    font-size: clamp(12px, 1.6vh, 13.5px);
     line-height: 1.3;
   }
   .detail-row + .detail-row {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
   }
   .detail-icon {
-    width: 14px;
-    height: 14px;
+    width: 15px;
+    height: 15px;
     flex-shrink: 0;
     color: var(--leaf-400);
   }
   .detail-label {
     color: var(--leaf-200);
     font-weight: 500;
-    min-width: 44px;
+    min-width: 46px;
     flex-shrink: 0;
-    font-size: 10px;
+    font-size: 10.5px;
     text-transform: uppercase;
     letter-spacing: 0.05em;
   }
   .detail-value {
     color: var(--white);
     font-weight: 400;
+    font-size: clamp(12px, 1.6vh, 13.5px);
   }
 
   main {
-    flex: 1 1 auto;
-    max-width: 460px;
+    flex: 0 0 auto;
+    max-width: 440px;
     width: 100%;
     margin: 0 auto;
-    padding: clamp(10px, 2vh, 18px) clamp(16px, 4vw, 28px) 0;
+    padding: clamp(10px, 1.8vh, 16px) clamp(16px, 4vw, 24px) 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -195,12 +211,13 @@
   .form-title {
     font-size: clamp(16px, 2.2vh, 19px);
     font-weight: 600;
-    margin: 0 0 clamp(8px, 1.3vh, 12px);
+    margin: 0 0 clamp(6px, 1.2vh, 10px);
     color: var(--ink-900);
+    text-align: center;
   }
 
   .field {
-    margin-bottom: clamp(6px, 1.2vh, 10px);
+    margin-bottom: clamp(6px, 1.1vh, 9px);
   }
   label {
     display: block;
@@ -209,14 +226,14 @@
     letter-spacing: 0.04em;
     text-transform: uppercase;
     color: var(--ink-600);
-    margin-bottom: 3px;
+    margin-bottom: 2px;
   }
   input {
     width: 100%;
     font-family: 'Poppins', system-ui, -apple-system, sans-serif;
     font-size: clamp(13px, 1.65vh, 14px);
     font-weight: 400;
-    padding: clamp(7px, 1.1vh, 10px) 12px;
+    padding: clamp(7px, 1vh, 9.5px) 12px;
     border-radius: var(--radius-box);
     border: 1.5px solid #E2E2D6;
     background: var(--white);
@@ -241,14 +258,14 @@
     color: var(--white);
     border: none;
     border-radius: var(--radius-box);
-    padding: clamp(9px, 1.4vh, 12px) 14px;
+    padding: clamp(9px, 1.3vh, 11.5px) 14px;
     font-family: 'Poppins', system-ui, -apple-system, sans-serif;
     font-size: clamp(13px, 1.65vh, 14px);
     font-weight: 600;
     letter-spacing: 0.01em;
     cursor: pointer;
     transition: background 0.2s var(--ease-brand), transform 0.1s var(--ease-brand);
-    margin-top: 4px;
+    margin-top: 3px;
   }
   button[type="submit"]:hover { background: var(--camel-600); }
   button[type="submit"]:active { transform: scale(0.99); }
@@ -264,7 +281,7 @@
   .error-msg {
     color: #B3453B;
     font-size: 11.5px;
-    margin-top: 6px;
+    margin-top: 5px;
     margin-bottom: 0;
     display: none;
   }
@@ -304,7 +321,7 @@
   footer {
     flex-shrink: 0;
     text-align: center;
-    padding: clamp(6px, 1vh, 12px) 16px clamp(8px, 1.4vh, 14px);
+    padding: clamp(6px, 1vh, 10px) 16px clamp(8px, 1.4vh, 12px);
     font-size: 11px;
     font-weight: 300;
     color: var(--ink-400);
@@ -313,42 +330,47 @@
 
   /* ─────────────────────────────────────────
      DESKTOP STYLES (>= 768px)
-     Spacious, comfortable, centered card with fit-content
+     Spacious hero, larger card fonts & pill bar
   ───────────────────────────────────────── */
 
   @media (min-width: 768px) {
     header.hero {
-      padding: clamp(26px, 3.8vh, 40px) 32px clamp(22px, 3.2vh, 34px);
+      flex: 1 1 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(32px, 5vh, 52px) 32px clamp(28px, 4.5vh, 44px);
     }
 
     .hero-inner {
-      max-width: 720px;
+      max-width: 820px;
     }
 
     .brand-logo {
-      margin-bottom: clamp(12px, 1.8vh, 18px);
+      margin-bottom: clamp(14px, 2.2vh, 22px);
     }
 
     .brand-logo-img {
-      height: clamp(30px, 4.2vh, 42px);
-      max-width: 260px;
+      height: clamp(34px, 5vh, 48px);
+      max-width: 300px;
     }
 
     .eyebrow {
-      font-size: 11.5px;
-      margin-bottom: 4px;
+      font-size: 12px;
+      margin-bottom: 5px;
       letter-spacing: 0.16em;
     }
 
     h1.hero-title {
-      font-size: clamp(23px, 3.2vh, 30px);
-      margin-bottom: 6px;
+      font-size: clamp(26px, 3.8vh, 34px);
+      margin-bottom: 8px;
     }
 
     .hero-sub {
-      font-size: clamp(13.5px, 1.7vh, 15px);
-      margin-bottom: clamp(14px, 2.2vh, 20px);
+      font-size: clamp(14.5px, 2vh, 16.5px);
+      margin-bottom: clamp(18px, 2.8vh, 26px);
       line-height: 1.5;
+      max-width: 480px;
     }
 
     .detail-card {
@@ -358,82 +380,91 @@
       display: flex;
       flex-direction: row;
       align-items: center;
-      gap: 18px;
-      padding: 9px 22px;
+      gap: 22px;
+      padding: 12px 28px;
       border-radius: var(--radius-pill);
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
     }
 
     .detail-row {
       padding: 0;
-      gap: 8px;
-      font-size: 13px;
+      gap: 10px;
+      font-size: 15px;
       white-space: nowrap;
     }
 
     .detail-row + .detail-row {
       border-top: none;
-      border-left: 1px solid rgba(255, 255, 255, 0.2);
-      padding-left: 18px;
+      border-left: 1px solid rgba(255, 255, 255, 0.25);
+      padding-left: 22px;
     }
 
     .detail-icon {
-      width: 15px;
-      height: 15px;
+      width: 18px;
+      height: 18px;
     }
 
     .detail-label {
-      font-size: 10.5px;
+      font-size: 11.5px;
       min-width: auto;
+      letter-spacing: 0.06em;
+    }
+
+    .detail-value {
+      font-size: 15px;
+      font-weight: 500;
     }
 
     main {
-      max-width: 480px;
-      padding: clamp(18px, 2.8vh, 30px) 24px 0;
+      flex: 0 0 auto;
+      max-width: 500px;
+      padding: clamp(20px, 3vh, 32px) 24px clamp(8px, 1.5vh, 14px);
     }
 
     .form-title {
-      font-size: clamp(18px, 2.4vh, 21px);
-      margin-bottom: clamp(10px, 1.6vh, 16px);
+      font-size: clamp(19px, 2.5vh, 22px);
+      margin-bottom: clamp(12px, 1.8vh, 18px);
       text-align: center;
     }
 
     .field {
-      margin-bottom: clamp(9px, 1.5vh, 13px);
+      margin-bottom: clamp(10px, 1.5vh, 14px);
     }
 
     label {
-      font-size: 11px;
+      font-size: 11.5px;
       margin-bottom: 4px;
     }
 
     input {
-      font-size: 14.5px;
-      padding: clamp(9px, 1.3vh, 12px) 14px;
-      border-radius: 9px;
+      font-size: 15px;
+      padding: clamp(10px, 1.4vh, 13px) 15px;
+      border-radius: 10px;
     }
 
     button[type="submit"] {
-      font-size: 15px;
-      padding: clamp(11px, 1.6vh, 14px) 18px;
+      font-size: 15.5px;
+      padding: clamp(12px, 1.6vh, 14.5px) 18px;
       margin-top: 6px;
-      border-radius: 9px;
+      border-radius: 10px;
     }
 
     #success {
-      padding: clamp(22px, 3.6vh, 36px) 0;
+      padding: clamp(24px, 4vh, 40px) 0;
     }
     #success .mark {
-      width: 42px;
-      height: 42px;
+      width: 44px;
+      height: 44px;
       font-size: 18px;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
     #success h2 {
-      font-size: 22px;
+      font-size: 23px;
       margin-bottom: 6px;
     }
     #success p {
-      font-size: 14px;
+      font-size: 14.5px;
       max-width: 360px;
     }
 
@@ -459,7 +490,15 @@
       
       <div class="detail-card reveal reveal-4">
         <div class="detail-row">
-          <svg class="detail-icon" viewBox="0 0 100 100" fill="currentColor"><path d="M83.5 0c2.4.7 4.4 2.7 4.7 6.5v14.4c-.4 2.4-1.8 4.2-4.4 4.8-3.2-.3-3.6-2.5-3.8-6.9-.4-8.6-.4-8.6 1.9-12.5 1.6-1.3 1.6-6.3 1.6-6.3zM11 18h142v11H11zM1 53h162v46H1z"/></svg>
+          <svg class="detail-icon" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="14" y="22" width="72" height="66" rx="12"/>
+            <line x1="14" y1="42" x2="86" y2="42"/>
+            <line x1="32" y1="12" x2="32" y2="24"/>
+            <line x1="68" y1="12" x2="68" y2="24"/>
+            <circle cx="34" cy="60" r="3.5" fill="currentColor" stroke="none"/>
+            <circle cx="50" cy="60" r="3.5" fill="currentColor" stroke="none"/>
+            <circle cx="66" cy="60" r="3.5" fill="currentColor" stroke="none"/>
+          </svg>
           <span class="detail-label">Fecha</span>
           <span class="detail-value">Miércoles 2 de septiembre</span>
         </div>
