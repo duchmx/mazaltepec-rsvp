@@ -5,21 +5,34 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <title>Confirma tu asistencia · Jardines de Mazaltepec</title>
 <meta name="description" content="RSVP — Evento de asesores, lanzamiento de preventa Etapa 2, Jardines de Mazaltepec." />
+<meta name="theme-color" content="#184A3A" />
+<link rel="icon" type="image/svg+xml" href="assets/favicons/favicon.svg" />
+<link rel="manifest" href="assets/favicons/site.webmanifest" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tokens/tokens.css">
 <style>
   :root {
-    --ink: #1B2620;
-    --jungle: #1B3A2B;
-    --jungle-deep: #12261C;
-    --sand: #F8F3E6;
-    --sand-warm: #F1E8D4;
-    --sage: #C7D0BC;
-    --sage-line: rgba(27, 58, 43, 0.14);
-    --ochre: #B5772E;
-    --ochre-deep: #96601F;
-    --white: #FFFDF9;
+    --pine-800: #184A3A;
+    --pine-900: #103A2C;
+    --pine-700: #1F5E49;
+    --pine-600: #2A7058;
+    --leaf-400: #82B280;
+    --leaf-200: #BED4BE;
+    --camel-500: #B3996B;
+    --camel-600: #9C814F;
+    --camel-700: #7E683D;
+    --cream-100: #EFF0E2;
+    --cream-50: #F7F8F1;
+    --ink-900: #14201B;
+    --ink-700: #2C3A33;
+    --ink-600: #4B5A52;
+    --ink-400: #8A958D;
+    --white: #FFFFFF;
+    --radius-box: 0.75rem;
+    --radius-pill: 9999px;
+    --ease-brand: cubic-bezier(0.2, 0, 0, 1);
   }
 
   * { box-sizing: border-box; }
@@ -30,9 +43,10 @@
     height: 100%;
     height: 100dvh;
     overflow: hidden;
-    background: var(--sand);
-    color: var(--ink);
-    font-family: 'Public Sans', -apple-system, sans-serif;
+    background: var(--cream-100);
+    color: var(--ink-900);
+    font-family: 'Poppins', 'Trebuchet MS', system-ui, -apple-system, sans-serif;
+    font-weight: 400;
     -webkit-font-smoothing: antialiased;
   }
 
@@ -47,13 +61,13 @@
 
   @media (prefers-reduced-motion: no-preference) {
     .reveal {
-      animation: rise 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+      animation: rise 0.5s var(--ease-brand) both;
     }
     .reveal-2 { animation-delay: 0.06s; }
     .reveal-3 { animation-delay: 0.12s; }
     .reveal-4 { animation-delay: 0.18s; }
     @keyframes rise {
-      from { opacity: 0; transform: translateY(10px); }
+      from { opacity: 0; transform: translateY(8px); }
       to { opacity: 1; transform: translateY(0); }
     }
   }
@@ -63,13 +77,13 @@
     inset: 0;
     overflow: hidden;
     pointer-events: none;
-    opacity: 0.45;
+    opacity: 0.35;
   }
   .plot-grid svg { width: 100%; height: 100%; display: block; }
 
   header.hero {
     position: relative;
-    background: var(--jungle);
+    background: var(--pine-800);
     color: var(--white);
     padding: clamp(14px, 2.4vh, 22px) clamp(16px, 4vw, 28px);
     flex-shrink: 0;
@@ -84,90 +98,82 @@
   .brand-logo {
     display: flex;
     align-items: center;
-    gap: 10px;
-    margin-bottom: clamp(6px, 1.2vh, 12px);
+    margin-bottom: clamp(8px, 1.3vh, 14px);
   }
 
-  .logo-placeholder {
-    width: 28px;
-    height: 28px;
-    border-radius: 7px;
-    background: rgba(255, 253, 249, 0.12);
-    border: 1px dashed rgba(255, 253, 249, 0.4);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    color: var(--sage);
-  }
-
-  .brand-name {
-    font-family: 'Fraunces', serif;
-    font-size: clamp(14.5px, 2vh, 17px);
-    font-weight: 500;
-    letter-spacing: 0.01em;
-    color: var(--white);
+  .brand-logo-img {
+    height: clamp(22px, 3vh, 28px);
+    width: auto;
+    display: block;
+    object-fit: contain;
   }
 
   .eyebrow {
     font-size: 10.5px;
+    font-weight: 500;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--sage);
-    font-weight: 600;
-    margin: 0 0 3px;
+    color: var(--leaf-200);
+    margin: 0 0 2px;
   }
 
   h1.hero-title {
-    font-family: 'Fraunces', serif;
-    font-optical-sizing: auto;
-    font-weight: 500;
-    font-size: clamp(19px, 2.8vh, 24px);
-    line-height: 1.15;
-    margin: 0 0 4px;
+    font-size: clamp(18px, 2.7vh, 23px);
+    font-weight: 600;
+    line-height: 1.2;
+    margin: 0 0 3px;
     letter-spacing: -0.01em;
     color: var(--white);
   }
 
   .hero-sub {
-    font-size: clamp(12px, 1.5vh, 13.5px);
+    font-size: clamp(12px, 1.45vh, 13px);
     line-height: 1.35;
-    color: rgba(255, 253, 249, 0.82);
-    margin: 0 0 clamp(8px, 1.4vh, 12px);
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0 0 clamp(8px, 1.3vh, 12px);
   }
 
   .detail-card {
-    background: rgba(255, 253, 249, 0.08);
-    border: 1px solid rgba(255, 253, 249, 0.16);
-    border-radius: 9px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: var(--radius-box);
     padding: clamp(6px, 1vh, 9px) clamp(10px, 2vw, 14px);
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(4px);
   }
 
   .detail-row {
     display: flex;
-    align-items: baseline;
-    gap: 10px;
+    align-items: center;
+    gap: 8px;
     padding: 3px 0;
-    font-size: clamp(11.5px, 1.45vh, 12.5px);
+    font-size: clamp(11.5px, 1.4vh, 12.5px);
     line-height: 1.3;
   }
   .detail-row + .detail-row {
-    border-top: 1px solid rgba(255, 253, 249, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .detail-icon {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    color: var(--leaf-400);
   }
   .detail-label {
-    color: var(--sage);
-    font-weight: 600;
-    min-width: 46px;
+    color: var(--leaf-200);
+    font-weight: 500;
+    min-width: 44px;
     flex-shrink: 0;
-    font-size: 10.5px;
+    font-size: 10px;
     text-transform: uppercase;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.05em;
   }
-  .detail-value { color: var(--white); }
+  .detail-value {
+    color: var(--white);
+    font-weight: 400;
+  }
   .detail-pending {
-    color: #E7C98C;
-    font-style: italic;
+    color: #F5DDA3;
   }
 
   main {
@@ -190,15 +196,15 @@
   }
 
   .form-title {
-    font-family: 'Fraunces', serif;
-    font-weight: 500;
     font-size: clamp(16px, 2.2vh, 19px);
+    font-weight: 600;
     margin: 0 0 2px;
-    color: var(--jungle-deep);
+    color: var(--ink-900);
   }
   .form-hint {
     font-size: clamp(11px, 1.3vh, 12.5px);
-    color: #5C6B57;
+    color: var(--ink-600);
+    font-weight: 300;
     margin: 0 0 clamp(8px, 1.3vh, 12px);
   }
 
@@ -208,63 +214,64 @@
   label {
     display: block;
     font-size: 10.5px;
-    font-weight: 600;
+    font-weight: 500;
     letter-spacing: 0.04em;
     text-transform: uppercase;
-    color: #5C6B57;
+    color: var(--ink-600);
     margin-bottom: 3px;
   }
   input {
     width: 100%;
-    font-family: 'Public Sans', sans-serif;
-    font-size: clamp(13px, 1.7vh, 14.5px);
-    padding: clamp(7px, 1.1vh, 10px) 11px;
-    border-radius: 8px;
-    border: 1.5px solid var(--sage-line);
+    font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+    font-size: clamp(13px, 1.65vh, 14px);
+    font-weight: 400;
+    padding: clamp(7px, 1.1vh, 10px) 12px;
+    border-radius: var(--radius-box);
+    border: 1.5px solid #E2E2D6;
     background: var(--white);
-    color: var(--ink);
+    color: var(--ink-900);
     outline: none;
-    transition: border-color 0.15s ease;
+    transition: border-color 0.2s var(--ease-brand), box-shadow 0.2s var(--ease-brand);
   }
-  input::placeholder { color: #A6AD9C; }
+  input::placeholder { color: var(--ink-400); }
   input:focus {
-    border-color: var(--ochre);
+    border-color: var(--pine-600);
+    box-shadow: 0 0 0 3px rgba(24, 74, 58, 0.12);
   }
   input:focus-visible {
-    outline: 2px solid var(--ochre);
-    outline-offset: 1px;
+    outline: none;
   }
 
   .hp-field { position: absolute; left: -9999px; opacity: 0; }
 
   button[type="submit"] {
     width: 100%;
-    background: var(--ochre-deep);
+    background: var(--camel-500);
     color: var(--white);
     border: none;
-    border-radius: 8px;
+    border-radius: var(--radius-box);
     padding: clamp(9px, 1.4vh, 12px) 14px;
-    font-family: 'Public Sans', sans-serif;
-    font-size: clamp(13px, 1.7vh, 14.5px);
+    font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+    font-size: clamp(13px, 1.65vh, 14px);
     font-weight: 600;
     letter-spacing: 0.01em;
     cursor: pointer;
-    transition: background 0.15s ease, transform 0.1s ease;
+    transition: background 0.2s var(--ease-brand), transform 0.1s var(--ease-brand);
     margin-top: 4px;
   }
-  button[type="submit"]:hover { background: #82501A; }
+  button[type="submit"]:hover { background: var(--camel-600); }
   button[type="submit"]:active { transform: scale(0.99); }
   button[type="submit"]:focus-visible {
-    outline: 2px solid var(--jungle);
+    outline: 2px solid var(--pine-800);
     outline-offset: 2px;
   }
   button[disabled] {
-    opacity: 0.6;
+    opacity: 0.65;
     cursor: not-allowed;
   }
 
   .error-msg {
-    color: #A13E2C;
+    color: #B3453B;
     font-size: 11.5px;
     margin-top: 6px;
     margin-bottom: 0;
@@ -280,27 +287,27 @@
     width: 38px;
     height: 38px;
     border-radius: 50%;
-    background: var(--jungle);
+    background: var(--pine-800);
     color: var(--white);
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto 10px;
-    font-size: 17px;
+    font-size: 16px;
   }
   #success h2 {
-    font-family: 'Fraunces', serif;
-    font-weight: 500;
     font-size: clamp(18px, 2.4vh, 21px);
+    font-weight: 600;
     margin: 0 0 4px;
-    color: var(--jungle-deep);
+    color: var(--ink-900);
   }
   #success p {
     font-size: 13px;
-    color: #5C6B57;
+    color: var(--ink-600);
+    font-weight: 300;
     max-width: 300px;
     margin: 0 auto;
-    line-height: 1.4;
+    line-height: 1.45;
   }
 
   footer {
@@ -308,7 +315,8 @@
     text-align: center;
     padding: clamp(6px, 1vh, 12px) 16px clamp(8px, 1.4vh, 14px);
     font-size: 11px;
-    color: #8A9284;
+    font-weight: 300;
+    color: var(--ink-400);
     letter-spacing: 0.02em;
   }
 </style>
@@ -319,7 +327,7 @@
   <header class="hero">
     <div class="plot-grid" aria-hidden="true">
       <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
-        <g stroke="#F8F3E6" stroke-width="0.6" opacity="0.5">
+        <g stroke="#EFF0E2" stroke-width="0.6" opacity="0.4">
           <line x1="0" y1="40" x2="400" y2="40"/>
           <line x1="0" y1="95" x2="400" y2="95"/>
           <line x1="0" y1="150" x2="400" y2="150"/>
@@ -336,12 +344,7 @@
 
     <div class="hero-inner">
       <div class="brand-logo reveal">
-        <div class="logo-placeholder" aria-label="Logo placeholder">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-          </svg>
-        </div>
-        <span class="brand-name">Jardines de Mazaltepec</span>
+        <img src="assets/logo/jm-horizontal-blanco.svg" alt="Jardines de Mazaltepec" class="brand-logo-img" />
       </div>
 
       <p class="eyebrow reveal reveal-2">Evento de asesores</p>
@@ -350,14 +353,17 @@
       
       <div class="detail-card reveal reveal-4">
         <div class="detail-row">
+          <svg class="detail-icon" viewBox="0 0 100 100" fill="currentColor"><path d="M83.5 0c2.4.7 4.4 2.7 4.7 6.5v14.4c-.4 2.4-1.8 4.2-4.4 4.8-3.2-.3-3.6-2.5-3.8-6.9-.4-8.6-.4-8.6 1.9-12.5 1.6-1.3 1.6-6.3 1.6-6.3zM11 18h142v11H11zM1 53h162v46H1z"/></svg>
           <span class="detail-label">Fecha</span>
           <span class="detail-value">Miércoles 2 de septiembre</span>
         </div>
         <div class="detail-row">
+          <svg class="detail-icon" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><path d="M50 91C50 91 77 63 77 41a27 27 0 1 0-54 0c0 22 27 50 27 50z"/><circle cx="50" cy="40" r="11"/></svg>
           <span class="detail-label">Sede</span>
           <span class="detail-value detail-pending">Se confirma en breve — te avisamos por WhatsApp</span>
         </div>
         <div class="detail-row">
+          <svg class="detail-icon" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><circle cx="50" cy="50" r="40"/><path d="M50 25v25l16 16"/></svg>
           <span class="detail-label">Hora</span>
           <span class="detail-value detail-pending">Se confirma en breve — te avisamos por WhatsApp</span>
         </div>

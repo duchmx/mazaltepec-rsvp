@@ -1,0 +1,14 @@
+{
+  "name": "Jardines de Mazaltepec",
+  "short_name": "Jardines Mazaltepec",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ],
+  "theme_color": "#184A3A",
+  "background_color": "#0E1A15",
+  "display": "standalone"
+}
