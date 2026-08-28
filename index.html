@@ -72,14 +72,6 @@
     }
   }
 
-  .plot-grid {
-    position: absolute;
-    inset: 0;
-    overflow: hidden;
-    pointer-events: none;
-    opacity: 0.35;
-  }
-  .plot-grid svg { width: 100%; height: 100%; display: block; }
 
   header.hero {
     position: relative;
@@ -102,8 +94,9 @@
   }
 
   .brand-logo-img {
-    height: clamp(22px, 3vh, 28px);
+    height: clamp(26px, 4.5vh, 44px);
     width: auto;
+    max-width: 220px;
     display: block;
     object-fit: contain;
   }
@@ -124,6 +117,7 @@
     margin: 0 0 3px;
     letter-spacing: -0.01em;
     color: var(--white);
+    text-align: center;
   }
 
   .hero-sub {
@@ -132,6 +126,7 @@
     font-weight: 300;
     color: rgba(255, 255, 255, 0.85);
     margin: 0 0 clamp(8px, 1.3vh, 12px);
+    text-align: center;
   }
 
   .detail-card {
@@ -172,9 +167,6 @@
     color: var(--white);
     font-weight: 400;
   }
-  .detail-pending {
-    color: #F5DDA3;
-  }
 
   main {
     flex: 1 1 auto;
@@ -198,14 +190,8 @@
   .form-title {
     font-size: clamp(16px, 2.2vh, 19px);
     font-weight: 600;
-    margin: 0 0 2px;
-    color: var(--ink-900);
-  }
-  .form-hint {
-    font-size: clamp(11px, 1.3vh, 12.5px);
-    color: var(--ink-600);
-    font-weight: 300;
     margin: 0 0 clamp(8px, 1.3vh, 12px);
+    color: var(--ink-900);
   }
 
   .field {
@@ -325,23 +311,6 @@
 
 <div class="screen-wrap">
   <header class="hero">
-    <div class="plot-grid" aria-hidden="true">
-      <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
-        <g stroke="#EFF0E2" stroke-width="0.6" opacity="0.4">
-          <line x1="0" y1="40" x2="400" y2="40"/>
-          <line x1="0" y1="95" x2="400" y2="95"/>
-          <line x1="0" y1="150" x2="400" y2="150"/>
-          <line x1="0" y1="205" x2="400" y2="205"/>
-          <line x1="0" y1="260" x2="400" y2="260"/>
-          <line x1="55" y1="0" x2="55" y2="300"/>
-          <line x1="130" y1="0" x2="130" y2="300"/>
-          <line x1="205" y1="0" x2="205" y2="300"/>
-          <line x1="280" y1="0" x2="280" y2="300"/>
-          <line x1="355" y1="0" x2="355" y2="300"/>
-        </g>
-      </svg>
-    </div>
-
     <div class="hero-inner">
       <div class="brand-logo reveal">
         <img src="assets/logo/jm-horizontal-blanco.svg" alt="Jardines de Mazaltepec" class="brand-logo-img" />
@@ -360,12 +329,12 @@
         <div class="detail-row">
           <svg class="detail-icon" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><path d="M50 91C50 91 77 63 77 41a27 27 0 1 0-54 0c0 22 27 50 27 50z"/><circle cx="50" cy="40" r="11"/></svg>
           <span class="detail-label">Sede</span>
-          <span class="detail-value detail-pending">Se confirma en breve — te avisamos por WhatsApp</span>
+          <span class="detail-value">Hotel Tabasco Inn</span>
         </div>
         <div class="detail-row">
           <svg class="detail-icon" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><circle cx="50" cy="50" r="40"/><path d="M50 25v25l16 16"/></svg>
           <span class="detail-label">Hora</span>
-          <span class="detail-value detail-pending">Se confirma en breve — te avisamos por WhatsApp</span>
+          <span class="detail-value">6pm</span>
         </div>
       </div>
     </div>
@@ -374,7 +343,6 @@
   <main>
     <form id="rsvp-form" novalidate>
       <p class="form-title">Confirma tu asistencia</p>
-      <p class="form-hint">Toma menos de un minuto.</p>
 
       <div class="field">
         <label for="name">Nombre completo</label>
@@ -400,7 +368,7 @@
     <div id="success">
       <div class="mark">✓</div>
       <h2>Listo, te esperamos</h2>
-      <p>Ya quedó tu confirmación. En cuanto se cierre la sede y la hora, te llega un mensaje por WhatsApp.</p>
+      <p>Ya quedó tu confirmación. Te esperamos en el Hotel Tabasco Inn a las 6:00 pm.</p>
     </div>
   </main>
 
